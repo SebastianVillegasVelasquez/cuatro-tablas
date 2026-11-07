@@ -50,6 +50,9 @@ export function Hero() {
           <a className="button button--primary" href="#configurador">
             Configura tu mesa
           </a>
+          <a className="button button--ghost" href="#como-funciona">
+            Cómo funciona
+          </a>
         </div>
 
         <fieldset className="hero__woods">

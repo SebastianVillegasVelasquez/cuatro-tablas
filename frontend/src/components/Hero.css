@@ -83,6 +83,17 @@
   background: #f0b565;
 }
 
+.button--ghost {
+  margin-left: 0.6rem;
+  color: var(--bone);
+  border: 1px solid rgb(242 232 216 / 0.35);
+}
+
+.button--ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--bone);
+}
+
 .button:focus-visible,
 .swatch:has(input:focus-visible),
 .hero__scroll:focus-visible {
