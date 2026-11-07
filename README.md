@@ -37,12 +37,18 @@ Requires Node.js. With the backend running on port 8000:
 
 ```powershell
 cd frontend
-copy .env.example .env   # optional: VITE_API_URL points to the API
 npm install
 npm run dev              # http://localhost:5173
 npm test
 npm run build
 ```
+
+In development the app calls `/api/*`, which Vite proxies to
+`http://127.0.0.1:8000`, so the backend must be running on port 8000. The
+browser never makes a cross-origin request, so the dev hostname and port do not
+matter. If the API and the app are deployed on different origins, set
+`VITE_API_URL` in the frontend and list the app's origin in the backend's
+`TABLAS_CORS_ORIGINS`.
 
 ## Estado
 
