@@ -1,0 +1,58 @@
+/* Shared layout for the landing sections below the hero. */
+.section {
+  padding: clamp(4rem, 10vw, 7rem) clamp(1.25rem, 5vw, 4rem);
+  color: #2b1d14;
+  background: #f4ede1;
+}
+
+.section--sand {
+  background: #ebe0cc;
+}
+
+.section--dark {
+  color: #f2e8d8;
+  background: #1c1410;
+}
+
+.section__inner {
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.section__eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b06a22;
+}
+
+.section--dark .section__eyebrow {
+  color: #e3a04b;
+}
+
+.section__title {
+  max-width: 36rem;
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.section__lead {
+  max-width: 36rem;
+  margin: 0 0 3rem;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: #5a4638;
+}
+
+.section--dark .section__lead {
+  color: #bba993;
+}
+
+.section__footnote {
+  margin: 2rem 0 0;
+  font-size: 0.85rem;
+  color: #7a6a58;
+}
