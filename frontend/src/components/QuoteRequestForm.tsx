@@ -61,8 +61,8 @@ export function QuoteRequestForm({ configuration, canSubmit }: Props) {
       <section className="request" role="status">
         <h2>¡Solicitud enviada!</h2>
         <p>
-          Registramos tu cotización de <strong>{formatCop(status.totalCop)}</strong>. Te
-          contactaremos pronto para confirmarla.
+          Registramos una solicitud de <strong>{formatCop(status.totalCop)}</strong>. Es una demo:
+          nadie te contactará, pero así recibiría un taller la solicitud de su cliente.
         </p>
         <button type="button" onClick={() => setStatus({ kind: 'idle' })}>
           Hacer otra solicitud
@@ -76,6 +76,7 @@ export function QuoteRequestForm({ configuration, canSubmit }: Props) {
   return (
     <form className="request" onSubmit={handleSubmit} noValidate aria-label="Solicitar cotización">
       <h2>Solicitar cotización</h2>
+      <p className="request__hint">Demo: usa datos de prueba, no reales.</p>
 
       <div className="field">
         <label htmlFor="contact-name">Nombre</label>

@@ -44,6 +44,14 @@
   pointer-events: auto;
 }
 
+.hero__eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+
 .hero__title {
   margin: 0;
   font-size: clamp(2.4rem, 6.2vw, 5rem);

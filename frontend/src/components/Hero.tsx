@@ -37,18 +37,18 @@ export function Hero() {
       </header>
 
       <div className="hero__content">
+        <p className="hero__eyebrow">Para talleres de madera</p>
         <h1 className="hero__title">
-          Diseña tu mesa.
-          <br />
-          <em>La construye un carpintero.</em>
+          Que tus clientes diseñen su mueble <em>y se coticen solos.</em>
         </h1>
         <p className="hero__lead">
-          Elige medidas, madera y acabado en 3D. Recibe un precio estimado y pide tu cotización.
+          Un configurador 3D con precio al instante, hecho a la medida de tu taller. Esta página es
+          la demostración: pruébala.
         </p>
 
         <div className="hero__actions">
           <a className="button button--primary" href="#configurador">
-            Configura tu mesa
+            Prueba la demo
           </a>
           <a className="button button--ghost" href="#como-funciona">
             Cómo funciona
@@ -75,7 +75,7 @@ export function Hero() {
           ))}
         </fieldset>
 
-        <p className="hero__note">El precio es una estimación; el carpintero lo confirma.</p>
+        <p className="hero__note">Demo con maderas y precios de ejemplo.</p>
       </div>
 
       <a className="hero__scroll" href="#configurador">
