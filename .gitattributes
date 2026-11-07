@@ -1,0 +1,5 @@
+# Finales de línea consistentes entre Windows y Linux
+* text=auto eol=lf
+*.bat text eol=crlf
+*.glb binary
+*.gltf text
