@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { ConfiguratorPanel } from './components/ConfiguratorPanel'
+import { QuoteRequestForm } from './components/QuoteRequestForm'
 import { QuoteSummary } from './components/QuoteSummary'
 import { DEFAULT_CONFIGURATION } from './domain/defaults'
 import { normalizeConfiguration } from './domain/normalize'
@@ -49,6 +50,7 @@ export default function App() {
                 onChange={setDraft}
               />
               <QuoteSummary state={quote} />
+              <QuoteRequestForm configuration={configuration} canSubmit={quote.status === 'ready'} />
             </>
           )}
         </aside>
