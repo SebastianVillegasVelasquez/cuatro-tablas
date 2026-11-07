@@ -1,5 +1,7 @@
 import { lazy, Suspense, useMemo, useState } from 'react'
+import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
+import { Contact } from './components/Contact'
 import { Faq } from './components/Faq'
 import { Offer } from './components/Offer'
 import { Packages } from './components/Packages'
@@ -77,6 +79,8 @@ export default function App() {
       <Offer />
       <Packages />
       <Faq />
+      <Contact />
+      <Footer />
     </main>
   )
 }
