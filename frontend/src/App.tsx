@@ -9,6 +9,7 @@ import { DEFAULT_CONFIGURATION } from './domain/defaults'
 import { normalizeConfiguration } from './domain/normalize'
 import { useCatalog } from './hooks/useCatalog'
 import { useQuote } from './hooks/useQuote'
+import './components/section.css'
 import './App.css'
 
 const Viewer = lazy(() => import('./scene/Viewer').then((m) => ({ default: m.Viewer })))
@@ -35,7 +36,12 @@ export default function App() {
       <HowItWorks />
       <div className="app" id="configurador">
         <header className="app__header">
-          <h2>Ajusta hasta que sea tuya</h2>
+          <p className="section__eyebrow">Demo en vivo</p>
+          <h2>Pruébalo como lo haría tu cliente</h2>
+          <p className="app__notice">
+            Es una demostración: las maderas y los precios son de ejemplo y las solicitudes no
+            llegan a ningún taller.
+          </p>
         </header>
         <div className="app__layout">
           <section className="app__viewer">
