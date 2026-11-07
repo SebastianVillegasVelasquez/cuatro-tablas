@@ -1,0 +1,193 @@
+/* "Taller de noche": warm dark palette, deliberately not tech-neon. */
+.hero {
+  --night: #1c1410;
+  --bone: #f2e8d8;
+  --ember: #e3a04b;
+  --muted: #bba993;
+
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  color: var(--bone);
+  background:
+    radial-gradient(60% 55% at 72% 48%, rgb(227 160 75 / 0.22), transparent 70%),
+    radial-gradient(40% 40% at 10% 90%, rgb(180 83 58 / 0.18), transparent 70%),
+    var(--night);
+}
+
+.hero__stage {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__nav {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem clamp(1.25rem, 5vw, 4rem);
+}
+
+.hero__brand {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 40rem;
+  padding: clamp(2rem, 9vh, 6rem) clamp(1.25rem, 5vw, 4rem) 6rem;
+  pointer-events: none; /* let the cursor reach the 3D scene behind the text */
+}
+
+.hero__content > * {
+  pointer-events: auto;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.4rem, 6.2vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.hero__title em {
+  color: var(--ember);
+  font-style: italic;
+}
+
+.hero__lead {
+  max-width: 30rem;
+  margin: 1.5rem 0 2rem;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.95rem 1.7rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button--primary {
+  color: var(--night);
+  background: var(--ember);
+}
+
+.button--primary:hover {
+  transform: translateY(-2px);
+  background: #f0b565;
+}
+
+.button:focus-visible,
+.swatch:has(input:focus-visible),
+.hero__scroll:focus-visible {
+  outline: 2px solid var(--bone);
+  outline-offset: 3px;
+}
+
+.hero__woods {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.hero__woods legend {
+  float: left;
+  margin-right: 0.5rem;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem 0.4rem 0.45rem;
+  border: 1px solid rgb(242 232 216 / 0.22);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.swatch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.swatch__dot {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.3);
+}
+
+.swatch:has(input:checked) {
+  border-color: var(--ember);
+  background: rgb(227 160 75 / 0.14);
+}
+
+.hero__note {
+  margin: 1.25rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.hero__scroll {
+  position: absolute;
+  z-index: 2;
+  left: clamp(1.25rem, 5vw, 4rem);
+  bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.hero__scroll-line {
+  width: 3rem;
+  height: 1px;
+  background: var(--ember);
+  transform-origin: left;
+  animation: slide 2.4s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    transform: scaleX(0.3);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 760px) {
+  /* Text on top, table centred below it. */
+  .hero__stage {
+    top: 38%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll-line {
+    animation: none;
+  }
+  .button {
+    transition: none;
+  }
+}
