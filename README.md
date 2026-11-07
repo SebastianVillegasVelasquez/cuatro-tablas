@@ -31,6 +31,19 @@ Interactive API docs: http://localhost:8000/docs
 | `TABLAS_CORS_ORIGINS` | Comma-separated allowed origins | `http://localhost:5173` |
 | `TABLAS_ADMIN_API_KEY` | Enables `GET /admin/quote-requests` (header `X-API-Key`) | unset = admin disabled |
 
+## Run the frontend
+
+Requires Node.js. With the backend running on port 8000:
+
+```powershell
+cd frontend
+copy .env.example .env   # optional: VITE_API_URL points to the API
+npm install
+npm run dev              # http://localhost:5173
+npm test
+npm run build
+```
+
 ## Estado
 
 En construcción. Los precios y límites de medidas del catálogo son **datos de
