@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react'
 import { ConfiguratorPanel } from './components/ConfiguratorPanel'
+import { QuoteSummary } from './components/QuoteSummary'
 import { DEFAULT_CONFIGURATION } from './domain/defaults'
 import { normalizeConfiguration } from './domain/normalize'
 import { useCatalog } from './hooks/useCatalog'
+import { useQuote } from './hooks/useQuote'
 import { Viewer } from './scene/Viewer'
 import './App.css'
 
@@ -18,6 +20,8 @@ export default function App() {
         : draft,
     [draft, catalogState],
   )
+
+  const quote = useQuote(configuration)
 
   return (
     <main className="app">
@@ -38,11 +42,14 @@ export default function App() {
             </p>
           )}
           {catalogState.status === 'ready' && (
-            <ConfiguratorPanel
-              catalog={catalogState.catalog}
-              configuration={configuration}
-              onChange={setDraft}
-            />
+            <>
+              <ConfiguratorPanel
+                catalog={catalogState.catalog}
+                configuration={configuration}
+                onChange={setDraft}
+              />
+              <QuoteSummary state={quote} />
+            </>
           )}
         </aside>
       </div>
