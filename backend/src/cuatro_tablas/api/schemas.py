@@ -1,3 +1,6 @@
+from datetime import datetime
+from decimal import Decimal
+
 from pydantic import BaseModel, EmailStr, Field
 
 from cuatro_tablas.domain.configuration import (
@@ -69,4 +72,27 @@ class QuoteRequestIn(BaseModel):
 
 class QuoteRequestCreatedOut(BaseModel):
     id: str
+    total_cop: int
+
+
+class ContactOut(BaseModel):
+    name: str
+    email: str | None
+    phone: str | None
+    message: str | None
+
+
+class LineItemOut(BaseModel):
+    concept: str
+    amount_cop: int
+
+
+class AdminQuoteRequestOut(BaseModel):
+    id: str
+    created_at: datetime
+    configuration: TableConfigurationIn
+    contact: ContactOut
+    items: list[LineItemOut]
+    subtotal_cop: int
+    markup_rate: Decimal
     total_cop: int

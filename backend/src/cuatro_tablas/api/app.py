@@ -5,6 +5,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from cuatro_tablas.api.routers.admin import build_admin_router
 from cuatro_tablas.api.routers.catalog import build_catalog_router
 from cuatro_tablas.api.routers.quote_requests import build_quote_requests_router
 from cuatro_tablas.api.routers.quotes import build_quotes_router
@@ -18,6 +19,7 @@ def create_app(
     catalog: Catalog = DEFAULT_CATALOG,
     cors_origins: Sequence[str] = (),
     quote_requests: QuoteRequestRepository | None = None,
+    admin_api_key: str | None = None,
 ) -> FastAPI:
     app = FastAPI(title="4-tablas API", version="0.1.0")
     repository = quote_requests if quote_requests is not None else InMemoryQuoteRequestRepository()
@@ -50,4 +52,6 @@ def create_app(
     app.include_router(build_catalog_router(catalog))
     app.include_router(build_quotes_router(catalog))
     app.include_router(build_quote_requests_router(catalog, repository))
+    if admin_api_key:  # without a key the admin API does not exist at all
+        app.include_router(build_admin_router(repository, admin_api_key))
     return app
