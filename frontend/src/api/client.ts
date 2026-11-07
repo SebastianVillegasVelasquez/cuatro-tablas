@@ -1,6 +1,6 @@
 import type { Catalog, Contact, TableConfiguration, ValidationIssue } from '../domain/types'
 
-const BASE_URL = (import.meta.env.VITE_API_URL ?? 'http://localhost:8000').replace(/\/$/, '')
+const BASE_URL = (import.meta.env.VITE_API_URL ?? '/api').replace(/\/$/, '')
 
 export class ApiError extends Error {
   status: number
