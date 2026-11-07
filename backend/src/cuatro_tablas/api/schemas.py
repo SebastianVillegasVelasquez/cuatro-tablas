@@ -1,10 +1,11 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, EmailStr, Field
 
 from cuatro_tablas.domain.configuration import (
     DEFAULT_LEG_SECTION_CM,
     DEFAULT_TOP_THICKNESS_CM,
     TableConfiguration,
 )
+from cuatro_tablas.domain.quote_request import Contact
 
 
 class OptionOut(BaseModel):
@@ -49,3 +50,23 @@ class TableConfigurationIn(BaseModel):
 class QuoteOut(BaseModel):
     total_cop: int
     currency: str = "COP"
+
+
+class ContactIn(BaseModel):
+    name: str = Field(min_length=1, max_length=120)
+    email: EmailStr | None = None
+    phone: str | None = Field(default=None, max_length=30)
+    message: str | None = Field(default=None, max_length=1000)
+
+    def to_domain(self) -> Contact:
+        return Contact(**self.model_dump())
+
+
+class QuoteRequestIn(BaseModel):
+    configuration: TableConfigurationIn
+    contact: ContactIn
+
+
+class QuoteRequestCreatedOut(BaseModel):
+    id: str
+    total_cop: int
