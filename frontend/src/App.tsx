@@ -1,6 +1,8 @@
 import { lazy, Suspense, useMemo, useState } from 'react'
 import { Hero } from './components/Hero'
+import { Faq } from './components/Faq'
 import { Offer } from './components/Offer'
+import { Packages } from './components/Packages'
 import { Problem } from './components/Problem'
 import { HowItWorks } from './components/HowItWorks'
 import { ConfiguratorPanel } from './components/ConfiguratorPanel'
@@ -73,6 +75,8 @@ export default function App() {
         </div>
       </div>
       <Offer />
+      <Packages />
+      <Faq />
     </main>
   )
 }
