@@ -11,12 +11,15 @@ export interface TableConfiguration {
   leg_section_cm: number
 }
 
-export type DimensionKey =
-  | 'width_cm'
-  | 'depth_cm'
-  | 'height_cm'
-  | 'top_thickness_cm'
-  | 'leg_section_cm'
+export const DIMENSION_KEYS = [
+  'width_cm',
+  'depth_cm',
+  'height_cm',
+  'top_thickness_cm',
+  'leg_section_cm',
+] as const
+
+export type DimensionKey = (typeof DIMENSION_KEYS)[number]
 
 export interface Option {
   id: string
