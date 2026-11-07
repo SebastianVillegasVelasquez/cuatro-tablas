@@ -1,5 +1,6 @@
 import { lazy, Suspense, useMemo, useState } from 'react'
 import { Hero } from './components/Hero'
+import { Offer } from './components/Offer'
 import { Problem } from './components/Problem'
 import { HowItWorks } from './components/HowItWorks'
 import { ConfiguratorPanel } from './components/ConfiguratorPanel'
@@ -71,6 +72,7 @@ export default function App() {
           </aside>
         </div>
       </div>
+      <Offer />
     </main>
   )
 }

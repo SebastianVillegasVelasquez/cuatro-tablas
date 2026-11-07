@@ -1,0 +1,51 @@
+.offer__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.25rem;
+}
+
+.offer__card {
+  padding: 2rem 1.75rem;
+  border-radius: 20px;
+  background: #e4d5be;
+}
+
+.offer__card--tailored {
+  color: #f2e8d8;
+  background: #1c1410;
+}
+
+.offer__card h3 {
+  margin: 0 0 1.25rem;
+  font-size: 1.4rem;
+}
+
+.offer__list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offer__list li {
+  position: relative;
+  padding-left: 1.75rem;
+  line-height: 1.5;
+}
+
+.offer__list li::before {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.offer__list--done li::before {
+  content: '✓';
+  color: #4f5d3a;
+}
+
+.offer__list--todo li::before {
+  content: '→';
+  color: #e3a04b;
+}
