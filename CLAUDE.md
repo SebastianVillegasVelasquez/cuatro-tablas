@@ -4,6 +4,16 @@ Configurador 3D de muebles a medida. Primer producto: mesa/escritorio.
 Repositorio en GitHub: `cuatro-tablas`. Proyecto de portafolio para ofrecer
 como servicio freelance a carpinterías y fabricantes de muebles.
 
+## Posicionamiento (importante para cualquier texto)
+
+**No hay un carpintero real detrás.** El sitio es una *demostración* dirigida a
+talleres de madera pequeños: «así se vería tu configurador». El público de la
+página es el dueño del taller, no el cliente final del mueble. Por eso:
+- Nunca prometer que alguien contactará, fabricará o entregará nada.
+- Los precios y maderas son de ejemplo y deben decirlo donde aparecen.
+- Los problemas de los talleres son **hipótesis** hasta validarlas hablando con
+  talleres reales; no presentar cifras ni testimonios inventados.
+
 ## Stack
 
 - `backend/`: Python + FastAPI, gestionado con **uv**. Paquete `cuatro_tablas`
