@@ -29,8 +29,9 @@ No son cotizaciones reales. Validar con un carpintero antes de cualquier demo.
 
 ## Convenciones
 
-- Conventional Commits en español, commits pequeños; las pruebas van en el
-  mismo commit que la funcionalidad.
+- Commits: Conventional Commits in English. Atomic (one logical change each,
+  tests green at every commit) and ordered so the history tells the story of
+  how the system grew. No AI attribution trailers.
 - TDD en el dominio: caso calculado a mano, independiente de la implementación.
 - No versionar `.venv` ni `node_modules`. Si se trabaja desde una VM Linux
   sobre la carpeta de Windows, usar `UV_PROJECT_ENVIRONMENT` fuera del repo.
@@ -40,3 +41,5 @@ No son cotizaciones reales. Validar con un carpintero antes de cualquier demo.
 Sebas está aprendiendo ingeniería de nivel senior: explicar el porqué y los
 trade-offs, cuestionar decisiones, y señalar los errores de forma explícita
 (qué está mal, por qué, cómo corregirlo, qué lección queda).
+El asistente avanza de forma autónoma y se detiene solo cuando necesita una
+decisión de Sebas.
