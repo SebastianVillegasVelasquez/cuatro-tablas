@@ -18,6 +18,9 @@ HEIGHT_RANGE = (45, 110)
 THICKNESS_RANGE = (2, 6)
 LEG_SECTION_RANGE = (4, 10)
 
+DEFAULT_TOP_THICKNESS_CM = 3
+DEFAULT_LEG_SECTION_CM = 6
+
 # Tapas largas con poco espesor se deforman (flecha). Regla de ejemplo.
 LONG_SPAN_CM = 180
 MIN_THICKNESS_FOR_LONG_SPAN_CM = 4
@@ -30,8 +33,8 @@ class TableConfiguration:
     height_cm: int
     material_id: str
     finish_id: str
-    top_thickness_cm: int = 3
-    leg_section_cm: int = 6
+    top_thickness_cm: int = DEFAULT_TOP_THICKNESS_CM
+    leg_section_cm: int = DEFAULT_LEG_SECTION_CM
 
 
 @dataclass(frozen=True)
